@@ -8,7 +8,7 @@
 ---
 
 ## Project Overview
-This project is a C++ word search puzzle generator that allows each user to create and play customized word search puzzles. First, the system generates a grid of random letters. Then, it replaces different sequences of letters with the user's provided words in different directions (horizontal and vertical). Finally,the system allows the users to check the words they've found by selecting the coordinates of the words.
+This project is a C++ word search puzzle generator that allows each user to create and play customized word search puzzles. First, the system generates a grid of random letters. Then, it replaces different sequences of letters with the user's provided words in different directions (horizontal, vertical, and diagonal). Finally,the system allows the users to check the words they've found by selecting the coordinates of the words.
 
 The goal of this project is to use Object-Oriented Programming principles to create a functional and interactive Word Search Puzzle Generator.
 
@@ -47,7 +47,7 @@ The goal of this project is to use Object-Oriented Programming principles to cre
 - Places words into the grid in different directions  
 - Displays the grid to the user  
 
-**Progress:** Mostly implemented  
+**Progress:** Completed
 
 ---
 
@@ -88,11 +88,11 @@ The goal of this project is to use Object-Oriented Programming principles to cre
 
 ## Current Progress 3/31/26 (Iteration #05)
 - WordList class fully completed  
-- Grid class mostly implemented (in process of completing the placeWord function) 
+- Grid class fully implemented 
 - Pseudocode completed for major functions 
 - Game/menu input hasn't been incorporated yet  
 
-Overall progress is approximately 60% complete.
+Overall progress is approximately 75% complete.
 
 ---
 
