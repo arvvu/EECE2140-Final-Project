@@ -67,22 +67,22 @@ The goal of this project is to use Object-Oriented Programming principles to cre
 
 ## Project Structure
 
-WordSearchProject/
-│
-├── README.md
-├── docs/
-│ └── System_Design_Overview.pdf
-├── pseudocode/
-│ └── pseudocode.txt
-├── src/
-│ ├── main.cpp
-│ ├── Grid.cpp
-│ ├── Grid.h
-│ ├── WordList.cpp
-│ ├── WordList.h
-│ └── Game.cpp (planned)
-└── images/
-└── system_diagram.png
+- WordSearchProject/
+- │
+- ├── README.md
+- ├── docs/
+- │ └── System_Design_Overview.pdf
+- ├── pseudocode/
+- │ └── pseudocode.txt
+- ├── src/
+- │ ├── main.cpp
+- │ ├── Grid.cpp
+- │ ├── Grid.h
+- │ ├── WordList.cpp
+- │ ├── WordList.h
+- │ └── Game.cpp (planned)
+- └── images/
+- └── system_diagram.png
 
 ---
 
