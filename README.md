@@ -8,26 +8,26 @@
 ---
 
 ## Project Overview
-This project is a C++ word search puzzle generator that allows each user to create and play customized word search puzzles. First, the system generates a grid of random letters. Then, it replaces different sequences of letters with the user's provided words in different directions (horizontal, vertical, and diagonal). Finally, the system allows users to check the words they've found by selecting the coordinates of the words.
+This project is a C++ word search puzzle generator that allows the user to create and play customized word search puzzles. First, the system generates a grid of random letters. Then, it replaces different sequences of letters with the user's provided words in different directions (horizontal, vertical, and diagonal). Finally, the system allows users to find words in the grid by selecting the coordinates of each letter in the grid.
 
 The goal of this project is to use Object-Oriented Programming principles to create a functional and interactive Word Search Puzzle Generator.
 
 ---
 
 ## Main Functionalities
-- `generateGrid()` - Generate a word search puzzle grid with randomly placed words
+- `generateGrid()` - Generate grid of random letters
 - `addWord()` - Add words to a customizable word list
-- `placeWord()` – Randomly integrate the word list into the generated grid
+- `roomForWord()` - Check if there is room on the grid for a word to be placed in a certain spot
+- `placeWord()` – Place a word in a certain spot on the grid with a certain direction
 - `displayGrid()` – Display the puzzle grid on the screen
-- `checkWord()` – Allow the user to input guesses using coordinates
-- `validateSelection()` – Check if the selected word is correct or not
+- `selectLetter()` – Capitalize a letter on the grid and add it to a string of all letters selected
 
 ---
 
 ## OOP Design Summary
 
 ### WordList Class
-**Purpose:** Manages every words that is used in the puzzle  
+**Purpose:** Manages the words that will be used in the puzzle  
 
 **Responsibilities:**
 - Store a list of words using a vector  
@@ -51,16 +51,15 @@ The goal of this project is to use Object-Oriented Programming principles to cre
 
 ---
 
-### Game / Controller (Planned)
+### Game / Controller
 **Purpose:** Controls overall program flow and user interaction  
 
 **Responsibilities:**
-- Connects WordList and Grid classes  
-- Handles user input 
-- Controls menu options  
+- gameSetup() sets up a grid containing all of the words in a given word list  
+- playGame() runs a loop that lets the user "play" the word search, selecting and finding words until none remain 
 
 
-**Progress:** Not implemented yet
+**Progress:** Completed
 
 ---
 
@@ -69,20 +68,17 @@ The goal of this project is to use Object-Oriented Programming principles to cre
 
 - WordSearchProject/
 - │
-- ├── README.md
-- ├── docs/
-- │ └── System_Design_Overview.pdf
 - ├── pseudocode/
 - │ └── pseudocode.txt
 - ├── src/
 - │ ├── main.cpp
-- │ ├── Grid.cpp
-- │ ├── Grid.h
-- │ ├── WordList.cpp
-- │ ├── WordList.h
-- │ └── Game.cpp (planned)
-- └── images/
-- └── system_diagram.png
+- │ ├── grid.cpp
+- │ ├── grid.h
+- │ ├── wordList.cpp
+- │ ├── wordList.h
+- │ ├── functions.cpp
+- │ └── functions.h
+- └── README.md
 
 ---
 
@@ -94,13 +90,18 @@ The goal of this project is to use Object-Oriented Programming principles to cre
 
 Overall progress is approximately 75% complete.
 
+## Current Porgress 4/7/26 (Final Submission)
+- The game is fully functional and user input is supported
+
+Overall progress is 100% complete.
+
 ---
 
 ## How to Compile and Run
 
-g++ main.cpp Grid.cpp WordList.cpp -o wordsearch
+g++ main.cpp grid.cpp wordList.cpp functions.cpp -o wordsearch
 
-### Compile
+### Run
 
 ./wordsearch
 
