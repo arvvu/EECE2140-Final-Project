@@ -69,10 +69,14 @@ void gameSetup(WordList& wordList, Grid& grid) {
 void playGame(WordList& wordList, Grid& grid) {
     bool playing = true;
     string temp;
+    string input;
     int coords[2];
     int result;
+    string message = "";
     while (playing) {
         newLines(40);
+        cout << message << endl;
+        message = "";
         grid.display();
         cout << endl;
         cout << "Words to find: " << endl;
@@ -82,10 +86,18 @@ void playGame(WordList& wordList, Grid& grid) {
         cout << endl;
         cout << "Enter coordinates to select letter (col row), or 0 to deselect, or -1 to exit to menu: ";
 
-        
-        cin >> coords[0];
+        cin >> input;
+
+        try {
+            coords[0] = stoi(input);
+        } catch (invalid_argument&) {
+            message = "Invalid input. Please only enter numbers.";
+            continue;
+        }
+
         if (coords[0] == 0) {
             grid.deselect();
+            message = "Grid deselected.";
             continue;
         }
         else if (coords[0] == -1) {
@@ -94,13 +106,21 @@ void playGame(WordList& wordList, Grid& grid) {
             break;
         }
         else {
-            cin >> coords[1];
+            cin >> input;
+            try {
+                coords[1] = stoi(input);
+            } catch (invalid_argument&) {
+                message = "Invalid input. Please enter only numbers.";
+                continue;
+            }
+
             grid.selectLetter(coords[1] - 1, coords[0] - 1);
             string selection = grid.getSelection();
             vector<string> words = wordList.getWords();
             for (int i = 0; i < words.size(); i++) {
                 if (selection == words[i]) {
                     wordList.removeWord(i);
+                    message = "You found '" + selection + "'!";
                     grid.deselect();
                 }
             }
@@ -110,8 +130,6 @@ void playGame(WordList& wordList, Grid& grid) {
             result = 1;
             playing = 0;
         }
-
-
     }
 
     newLines(40);
